@@ -26,6 +26,5 @@ type User {
   boards: [Board!]!
 }
 
-type Query {
-  hello(data: String): String!
-}
+
+

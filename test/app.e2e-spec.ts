@@ -30,6 +30,17 @@ describe('AppController (e2e)', () => {
       });
   });
 
+  // data 확인 쿼리
+  it('users', () => {
+    return request(app.getHttpServer())
+      .get('/graphql')
+      .send({ query: `query {getAll}`})
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.data.getUsers).toBe(expect.arrayContaining(['name']));
+      });
+  });
+
   it('user create', () => {
     const name = 'hakhak';
     return request(app.getHttpServer())

@@ -10,7 +10,7 @@ services:
       - POSTGRES_USER=testuser
       - POSTGRES_DB=testdb
     volumes:
-      - database:/var/lib/postgresql/data
+      - D:/workspce_vscode/hahak_docker:/var/lib/postgresql/data
     networks:
       hakhak_net:
         ipv4_address: 172.16.25.2

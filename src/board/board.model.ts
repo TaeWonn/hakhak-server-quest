@@ -1,10 +1,11 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, InputType, ObjectType } from '@nestjs/graphql';
 import { BaseModel } from '../shared/base.model';
 import { User } from '../user/user.model';
 import { Column, Entity, ManyToOne } from 'typeorm';
 
 @Entity()
 @ObjectType()
+@InputType()
 export class Board extends BaseModel {
   @Column()
   @Field((_) => String)
